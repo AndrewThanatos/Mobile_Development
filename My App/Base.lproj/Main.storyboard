@@ -40,6 +40,10 @@
                     <tabBarItem key="tabBarItem" title="Drawing" image="chart.pie.fill" catalog="system" id="T7e-E6-3xd">
                         <color key="badgeColor" name="AccentColor"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="View" destination="oB6-I1-pYx" id="siZ-DA-yJo"/>
+                        <outlet property="mainViewUI" destination="oB6-I1-pYx" id="JA1-OI-0fg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wou-IC-k7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ma3-kw-hms" userLabel="Exit" sceneMemberID="exit"/>

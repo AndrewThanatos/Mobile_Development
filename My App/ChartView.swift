@@ -9,48 +9,67 @@ import UIKit
 
 class ChartView: UIView {
 
-    var path: UIBezierPath!
-     
+    var width: Double {
+        return Double(frame.width)
+    }
+    
+    var height: Double {
+        return Double(frame.height)
+    }
+         
     override init(frame: CGRect) {
         super.init(frame: frame)
      
-        self.backgroundColor = UIColor.darkGray
+        self.backgroundColor = UIColor.white
     }
      
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
     }
     
     override func draw(_ rect: CGRect) {
-        self.createRectangle()
-     
-        // Specify the fill color and apply it to the path.
-        UIColor.orange.setFill()
-        path.fill()
-     
-        // Specify a border (stroke) color.
-        UIColor.purple.setStroke()
+        drawAxis()
+        drawChart()
+    }
+    
+    func drawChart() {
+        let path = UIBezierPath()
+        
+        path.lineWidth = 1
+        UIColor.red.setStroke()
+        
+        path.move(to: CGPoint(x: xScaling(point: -2 * Double.pi + height / 2),
+                              y: yScaling(point: width / 2)))
+        for x in stride(from: -2 * Double.pi, to: 2 * Double.pi, by: 0.1){
+            path.addLine(to: CGPoint(x: xScaling(point: x), y: yScaling(point: sin(x))))
+        }
+        
         path.stroke()
     }
     
-    func createRectangle() {
-        // Initialize the path.
-        path = UIBezierPath()
-     
-        // Specify the point that the path should start get drawn.
-        path.move(to: CGPoint(x: 0.0, y: 0.0))
-     
-        // Create a line between the starting point and the bottom-left side of the view.
-        path.addLine(to: CGPoint(x: 0.0, y: self.frame.size.height))
-     
-        // Create the bottom line (bottom-left to bottom-right).
-        path.addLine(to: CGPoint(x: self.frame.size.width, y: self.frame.size.height))
-     
-        // Create the vertical line from the bottom-right to the top-right side.
-        path.addLine(to: CGPoint(x: self.frame.size.width, y: 0.0))
-     
-        // Close the path. This will create the last line automatically.
-        path.close()
+    func xScaling(point: Double) -> Double {
+        return point + width / 2
+    }
+    
+    func yScaling(point: Double) -> Double {
+        return point + height / 2
+    }
+    
+    func drawAxis(){
+        let path = UIBezierPath()
+        
+        path.lineWidth = 0.5
+        UIColor.black.setStroke()
+        
+        path.move(to: CGPoint(x: width / 2, y: 0))
+        path.addLine(to: CGPoint(x: width / 2, y: height))
+        
+        path.move(to: CGPoint(x: 0, y: height / 2))
+        path.addLine(to: CGPoint(x: width, y: height / 2))
+        
+        path.stroke()
+        
     }
 
 }

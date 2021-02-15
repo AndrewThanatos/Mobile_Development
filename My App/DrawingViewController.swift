@@ -10,52 +10,41 @@ import UIKit
 class DrawingViewController: UIViewController {
     
     private var chartView: ChartView!
-
+    
+    @IBOutlet var mainViewUI: UIView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         chartView = ChartView()
-        print("viewDidLoad ->  ", chartView)
-     
-        let width: CGFloat = 50
-        let height: CGFloat = 50
-     
-        chartView.frame = CGRect(x: self.view.frame.size.width/2 - width/2,
-                                              y: self.view.frame.size.height/2 - height/2,
-                                              width: width,
-                                              height: height)
      
         self.view.addSubview(chartView)
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        setupSizes()
             
-        
-        let width: CGFloat = 50
-        let height: CGFloat = 50
-     
-        chartView.frame = CGRect(x: self.view.frame.size.width/2 - width/2,
-                                              y: self.view.frame.size.height/2 - height/2,
-                                              width: width,
-                                              height: height)
-        
-        print("viewWillTransition ->  ", chartView)
-        }
+    }
         
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let width: CGFloat = 50
-        let height: CGFloat = 50
-     
-        chartView.frame = CGRect(x: self.view.frame.size.width/2 - width/2,
-                                              y: self.view.frame.size.height/2 - height/2,
-                                              width: width,
-                                              height: height)
+        setupSizes()
         
-        print("viewDidLayoutSubviews ->  ", chartView)
+    }
+    
+    func setupSizes() {
+        print(self.view.safeAreaInsets)
+        let width: CGFloat = mainViewUI.frame.width
+        let height: CGFloat = mainViewUI.frame.height
+        let unit = min(width, height) * 0.8
+     
 
-//        chartView.frame = CGRect(x: 0, y: 0, width: 200, height: 300)
+        chartView.frame = CGRect(x: width / 2 - unit / 2,
+                                 y: height / 2 - unit / 2,
+                                 width: unit,
+                                 height: unit)
     }
 
 }
