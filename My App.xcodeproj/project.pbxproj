@@ -13,7 +13,9 @@
 		CE0A9B5B25D40BB700E72435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0A9B5925D40BB700E72435 /* Main.storyboard */; };
 		CE0A9B5D25D40BB900E72435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0A9B5C25D40BB900E72435 /* Assets.xcassets */; };
 		CE0A9B6025D40BB900E72435 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0A9B5E25D40BB900E72435 /* LaunchScreen.storyboard */; };
-		CE69F20025D8233D0071ECCB /* DrawingViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69F1FF25D8233D0071ECCB /* DrawingViewUI.swift */; };
+		CE69F21B25DA9D510071ECCB /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69F21A25DA9D510071ECCB /* DrawingViewController.swift */; };
+		CE69F21E25DA9D6A0071ECCB /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69F21D25DA9D6A0071ECCB /* ChartView.swift */; };
+		CE69F22125DA9D7C0071ECCB /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69F22025DA9D7C0071ECCB /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		CE0A9B5C25D40BB900E72435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0A9B5F25D40BB900E72435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0A9B6125D40BB900E72435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE69F1FF25D8233D0071ECCB /* DrawingViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewUI.swift; sourceTree = "<group>"; };
+		CE69F21A25DA9D510071ECCB /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		CE69F21D25DA9D6A0071ECCB /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		CE69F22025DA9D7C0071ECCB /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,9 @@
 				CE0A9B5C25D40BB900E72435 /* Assets.xcassets */,
 				CE0A9B5E25D40BB900E72435 /* LaunchScreen.storyboard */,
 				CE0A9B6125D40BB900E72435 /* Info.plist */,
-				CE69F1FF25D8233D0071ECCB /* DrawingViewUI.swift */,
+				CE69F21A25DA9D510071ECCB /* DrawingViewController.swift */,
+				CE69F21D25DA9D6A0071ECCB /* ChartView.swift */,
+				CE69F22025DA9D7C0071ECCB /* GraphView.swift */,
 			);
 			path = "My App";
 			sourceTree = "<group>";
@@ -142,8 +148,10 @@
 			files = (
 				CE0A9B5825D40BB700E72435 /* ViewController.swift in Sources */,
 				CE0A9B5425D40BB700E72435 /* AppDelegate.swift in Sources */,
+				CE69F22125DA9D7C0071ECCB /* GraphView.swift in Sources */,
 				CE0A9B5625D40BB700E72435 /* SceneDelegate.swift in Sources */,
-				CE69F20025D8233D0071ECCB /* DrawingViewUI.swift in Sources */,
+				CE69F21B25DA9D510071ECCB /* DrawingViewController.swift in Sources */,
+				CE69F21E25DA9D6A0071ECCB /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
