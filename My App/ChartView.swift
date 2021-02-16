@@ -20,7 +20,7 @@ class ChartView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
      
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = UIColor.green
     }
      
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +31,8 @@ class ChartView: UIView {
     override func draw(_ rect: CGRect) {
         drawAxis()
         drawChart()
+        
+        print(frame)
     }
     
     func drawChart() {
