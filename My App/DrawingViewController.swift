@@ -27,10 +27,12 @@ class DrawingViewController: UIViewController {
             break
         }
     }
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         
 //        switch segmentControl.selectedSegmentIndex {

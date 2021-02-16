@@ -42,6 +42,8 @@ class ChartView: UIView {
     override func draw(_ rect: CGRect) {
         drawAxis()
         drawChart()
+        
+        print(frame)
     }
     
     func drawChart() {
