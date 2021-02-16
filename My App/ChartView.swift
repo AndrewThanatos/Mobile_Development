@@ -8,6 +8,8 @@
 import UIKit
 
 class ChartView: UIView {
+    
+    let unit = 10.0
 
     var width: Double {
         return Double(frame.width)
@@ -15,6 +17,15 @@ class ChartView: UIView {
     
     var height: Double {
         return Double(frame.height)
+    }
+    
+    
+    var unitX: Double {
+        return Double(frame.width * 0.02)
+    }
+    
+    var unitY: Double {
+        return Double(frame.height * 0.05)
     }
          
     override init(frame: CGRect) {
@@ -34,39 +45,55 @@ class ChartView: UIView {
     }
     
     func drawChart() {
-        let path = UIBezierPath()
+        let chartPath = UIBezierPath()
         
-        path.lineWidth = 1
+        chartPath.lineWidth = 1
         UIColor.red.setStroke()
         
-        path.move(to: CGPoint(x: xScaling(point: -2 * Double.pi + height / 2),
-                              y: yScaling(point: width / 2)))
-        for x in stride(from: -2 * Double.pi, to: 2 * Double.pi, by: 0.1){
-            path.addLine(to: CGPoint(x: xScaling(point: x), y: yScaling(point: sin(x))))
+        chartPath.move(to: CGPoint(x: xScaling(point: -2 * Double.pi),
+                              y: yScaling(point: 0)))
+        for x in stride(from: -2 * Double.pi, to: 2 * Double.pi, by: 0.05){
+            chartPath.addLine(to: CGPoint(x: xScaling(point: x), y: yScaling(point: sin(x))))
         }
         
-        path.stroke()
+        chartPath.stroke()
     }
     
     func xScaling(point: Double) -> Double {
-        return point + width / 2
+        return point * (width - 2 * unit) / (Double.pi * 4) + width / 2
     }
     
     func yScaling(point: Double) -> Double {
-        return point + height / 2
+        return point * (height - 2 * unit) / (Double.pi * 4) + height / 2
     }
     
     func drawAxis(){
         let path = UIBezierPath()
         
-        path.lineWidth = 0.5
+        path.lineWidth = 1
         UIColor.black.setStroke()
         
-        path.move(to: CGPoint(x: width / 2, y: 0))
-        path.addLine(to: CGPoint(x: width / 2, y: height))
+        path.move(to: CGPoint(x: width / 2, y: unit))
+        path.addLine(to: CGPoint(x: width / 2, y: height - unit))
         
-        path.move(to: CGPoint(x: 0, y: height / 2))
-        path.addLine(to: CGPoint(x: width, y: height / 2))
+        path.move(to: CGPoint(x: unit, y: height / 2))
+        path.addLine(to: CGPoint(x: width - unit, y: height / 2))
+//        
+        path.move(to: CGPoint(x: width - unit, y: height / 2))
+        path.addLine(to: CGPoint(x: width - 2 * unit, y: height / 2 - 0.5 * unit))
+        path.move(to: CGPoint(x: width - unit, y: height / 2))
+        path.addLine(to: CGPoint(x: width - 2 * unit, y: height / 2 + 0.5 * unit))
+        
+        path.move(to: CGPoint(x: width / 2, y: unit))
+        path.addLine(to: CGPoint(x: width / 2 + 0.5 * unit, y: 2 * unit))
+        path.move(to: CGPoint(x: width / 2, y: unit))
+        path.addLine(to: CGPoint(x: width / 2 - 0.5 * unit, y: 2 * unit))
+        
+        path.move(to: CGPoint(x: width / 2 - 5, y: -1 * (height - 2 * unit) / (Double.pi * 4) + height / 2))
+        path.addLine(to: CGPoint(x: width / 2 + 5, y: -1 * (height - 2 * unit) / (Double.pi * 4) + height / 2))
+        
+        path.move(to: CGPoint(x: point * (width - 2 * unit) / (Double.pi * 4) + width / 2, y: height / 2 - 5))
+        path.addLine(to: CGPoint(x: point * (width - 2 * unit) / (Double.pi * 4) + width / 2, y: height / 2 + 5))
         
         path.stroke()
         

@@ -43,7 +43,7 @@
                                             <constraint firstItem="aTr-oa-s9t" firstAttribute="centerY" secondItem="35r-Ew-vAe" secondAttribute="centerY" id="z94-tj-git"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFu-Lx-WHh">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFu-Lx-WHh" customClass="ChartView" customModule="My_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="400.66666666666669" height="267"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
