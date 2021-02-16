@@ -16,7 +16,7 @@ class DrawingViewController: UIViewController {
         super.viewDidLoad()
         chartView = ChartView()
      
-        self.view.addSubview(chartView)
+//        self.view.addSubview(chartView)
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
