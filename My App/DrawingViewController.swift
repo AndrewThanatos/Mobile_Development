@@ -11,8 +11,6 @@ class DrawingViewController: UIViewController {
     
     private var chartView: ChartView!
     
-    @IBOutlet var mainViewUI: UIView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +34,8 @@ class DrawingViewController: UIViewController {
     
     func setupSizes() {
         print(self.view.safeAreaInsets)
-        let width: CGFloat = mainViewUI.frame.width
-        let height: CGFloat = mainViewUI.frame.height
+        let width: CGFloat = self.view.frame.width
+        let height: CGFloat = self.view.frame.height
         let unit = min(width, height) * 0.8
      
 
