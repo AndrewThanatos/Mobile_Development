@@ -47,7 +47,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFu-Lx-WHh" customClass="ChartView" customModule="My_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="370" height="370"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="MFu-Lx-WHh" secondAttribute="height" multiplier="1:1" id="89d-ul-mxg"/>
                                             <constraint firstAttribute="width" secondItem="MFu-Lx-WHh" secondAttribute="height" multiplier="3:2" id="XRq-OD-xPO"/>
@@ -71,10 +70,6 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="7Ec-mL-Bmi" secondAttribute="trailing" id="EXs-fS-E9O"/>
-                                    <constraint firstItem="7Ec-mL-Bmi" firstAttribute="leading" secondItem="YUt-mx-CBf" secondAttribute="leading" id="xtC-Dv-sy4"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HNQ-1a-Bpg"/>
@@ -120,7 +115,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="View" destination="oB6-I1-pYx" id="siZ-DA-yJo"/>
-                        <outlet property="mainView" destination="MFu-Lx-WHh" id="Ywh-mF-fRs"/>
+                        <outlet property="mainView" destination="MFu-Lx-WHh" id="d3L-of-bTY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wou-IC-k7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -191,9 +186,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

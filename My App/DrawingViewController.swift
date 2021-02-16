@@ -9,23 +9,19 @@ import UIKit
 
 class DrawingViewController: UIViewController {
     
-    private var chartView: ChartView!
-    private var graphView: GraphView!
     
     @IBOutlet var mainView: ChartView!
     
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            chartView = ChartView()
-            mainView = chartView
-            mainView.backgroundColor = .red
-
+            mainView.state = .chart
         case 1:
-            graphView = GraphView()
+            mainView.state = .graph
         default:
             break
         }
+        mainView.setNeedsDisplay()
     }
 
     

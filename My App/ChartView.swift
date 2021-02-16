@@ -9,6 +9,13 @@ import UIKit
 
 class ChartView: UIView {
     
+    enum State {
+        case chart
+        case graph
+    }
+    
+    var state: State = .chart
+    
     let unit = 10.0
 
     var width: Double {
@@ -40,10 +47,14 @@ class ChartView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        drawAxis()
-        drawChart()
-        
-        print(frame)
+        switch state {
+        case .chart:
+            drawAxis()
+            drawChart()
+        case .graph:
+            print("graph")
+            break
+        }
     }
     
     func drawChart() {
