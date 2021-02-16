@@ -78,7 +78,7 @@ class ChartView: UIView {
         
         path.move(to: CGPoint(x: unit, y: height / 2))
         path.addLine(to: CGPoint(x: width - unit, y: height / 2))
-//        
+        
         path.move(to: CGPoint(x: width - unit, y: height / 2))
         path.addLine(to: CGPoint(x: width - 2 * unit, y: height / 2 - 0.5 * unit))
         path.move(to: CGPoint(x: width - unit, y: height / 2))
@@ -91,9 +91,9 @@ class ChartView: UIView {
         
         path.move(to: CGPoint(x: width / 2 - 5, y: -1 * (height - 2 * unit) / (Double.pi * 4) + height / 2))
         path.addLine(to: CGPoint(x: width / 2 + 5, y: -1 * (height - 2 * unit) / (Double.pi * 4) + height / 2))
-        
-        path.move(to: CGPoint(x: point * (width - 2 * unit) / (Double.pi * 4) + width / 2, y: height / 2 - 5))
-        path.addLine(to: CGPoint(x: point * (width - 2 * unit) / (Double.pi * 4) + width / 2, y: height / 2 + 5))
+
+        path.move(to: CGPoint(x: (width - 2 * unit) / (Double.pi * 4) + width / 2, y: height / 2 - 5))
+        path.addLine(to: CGPoint(x: (width - 2 * unit) / (Double.pi * 4) + width / 2, y: height / 2 + 5))
         
         path.stroke()
         
