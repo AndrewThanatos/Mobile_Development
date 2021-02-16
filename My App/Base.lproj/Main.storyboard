@@ -17,24 +17,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aTr-oa-s9t">
-                                <rect key="frame" x="48" y="44" width="107" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <segments>
-                                    <segment title="Plot"/>
-                                    <segment title="Chart"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" systemColor="linkColor"/>
-                                <connections>
-                                    <action selector="SegmentedControl:" destination="ma3-kw-hms" eventType="valueChanged" id="cpX-06-Hrf"/>
-                                </connections>
-                            </segmentedControl>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="YUt-mx-CBf">
-                                <rect key="frame" x="10" y="251" width="394" height="394"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" secondItem="YUt-mx-CBf" secondAttribute="width" multiplier="1:1" priority="1" id="0vf-5E-TUM"/>
-                                </constraints>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YUt-mx-CBf">
+                                <rect key="frame" x="10" y="221" width="394" height="454"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6E-NC-jNf">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="60"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aTr-oa-s9t">
+                                                <rect key="frame" x="143.5" y="14.5" width="107" height="32"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <segments>
+                                                    <segment title="Plot"/>
+                                                    <segment title="Chart"/>
+                                                </segments>
+                                                <color key="selectedSegmentTintColor" systemColor="linkColor"/>
+                                                <connections>
+                                                    <action selector="SegmentedControl:" destination="ma3-kw-hms" eventType="valueChanged" id="cpX-06-Hrf"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="kbZ-jJ-pa4"/>
+                                            <constraint firstItem="aTr-oa-s9t" firstAttribute="centerY" secondItem="R6E-NC-jNf" secondAttribute="centerY" id="nSU-0l-7nS"/>
+                                            <constraint firstItem="aTr-oa-s9t" firstAttribute="centerX" secondItem="R6E-NC-jNf" secondAttribute="centerX" id="ueq-Bd-i08"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ec-mL-Bmi">
+                                        <rect key="frame" x="0.0" y="60" width="394" height="394"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7Ec-mL-Bmi" secondAttribute="height" multiplier="1:1" id="bPu-lQ-L54"/>
+                                            <constraint firstAttribute="width" secondItem="7Ec-mL-Bmi" secondAttribute="height" multiplier="3:2" id="vFV-Jw-Ixi"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="vFV-Jw-Ixi"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <exclude reference="bPu-lQ-L54"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="vFV-Jw-Ixi"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HNQ-1a-Bpg"/>
@@ -54,9 +86,9 @@
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
+                                <exclude reference="uOg-iN-buF"/>
                                 <exclude reference="o0H-L9-K8p"/>
                                 <exclude reference="vkd-Cy-vBc"/>
-                                <exclude reference="uOg-iN-buF"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -147,6 +179,9 @@
         </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
