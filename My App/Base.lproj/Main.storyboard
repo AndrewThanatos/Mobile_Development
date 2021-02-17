@@ -49,25 +49,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="MFu-Lx-WHh" secondAttribute="height" multiplier="1:1" id="89d-ul-mxg"/>
-                                            <constraint firstAttribute="width" secondItem="MFu-Lx-WHh" secondAttribute="height" multiplier="3:2" id="XRq-OD-xPO"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="XRq-OD-xPO"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=compact-widthClass=compact">
-                                            <mask key="constraints">
-                                                <exclude reference="89d-ul-mxg"/>
-                                                <include reference="XRq-OD-xPO"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=compact-widthClass=regular">
-                                            <mask key="constraints">
-                                                <exclude reference="89d-ul-mxg"/>
-                                                <include reference="XRq-OD-xPO"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                             </stackView>

@@ -9,7 +9,6 @@ import UIKit
 
 class DrawingViewController: UIViewController {
     
-    
     @IBOutlet var mainView: ChartView!
     
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
@@ -24,25 +23,7 @@ class DrawingViewController: UIViewController {
         mainView.setNeedsDisplay()
     }
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-        
-//        switch segmentControl.selectedSegmentIndex {
-//        case 0:
-//            chartView = ChartView()
-//            print("Chart")
-//        case 1:
-//            graphView = GraphView()
-//            print("Graph")
-//        default:
-//            break
-//        }
-        
-        
     }
-
 }

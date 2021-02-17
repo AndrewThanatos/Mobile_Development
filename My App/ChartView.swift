@@ -50,14 +50,45 @@ class ChartView: UIView {
         switch state {
         case .chart:
             drawAxis()
-            drawChart()
+            drawGraph()
         case .graph:
-            print("graph")
+            drawChart()
             break
         }
     }
     
     func drawChart() {
+        var units: [DiagramUnit] = [DiagramUnit(value: 0.8, color: .blue),
+                                    DiagramUnit(value: 0.05, color: .brown),
+                                    DiagramUnit(value: 0.05, color: .cyan),
+                                    DiagramUnit(value: 0.1, color: .orange)]
+        
+        var lastAngle: CGFloat = 0
+        
+        units.forEach { unit in
+                    let path = UIBezierPath()
+                    
+                    let endAngle: CGFloat = lastAngle + CGFloat(unit.value * 2 * Double.pi)
+                    let radius = frame.width / 3
+                    
+                    path.addArc(withCenter: CGPoint(x: frame.width / 2, y: frame.height / 2), radius: radius, startAngle: lastAngle, endAngle: endAngle, clockwise: true)
+                    
+                    path.lineWidth = radius / 1.5
+                    unit.color.setStroke()
+                    path.stroke()
+                    
+                    lastAngle = endAngle
+                }
+        
+        struct DiagramUnit {
+                
+                let value: Double
+                let color: UIColor
+            }
+    }
+    
+    
+    func drawGraph() {
         let chartPath = UIBezierPath()
         
         chartPath.lineWidth = 1
