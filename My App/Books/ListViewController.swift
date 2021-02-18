@@ -29,7 +29,7 @@ class ListViewController: UIViewController {
     func configureTableView() {
         view.addSubview(tableView)
         setTableViewDelegates()
-        tableView.rowHeight = BookCell.
+        tableView.rowHeight = 100
         tableView.register(BookCell.self, forCellReuseIdentifier: Cells.bookCell)
         tableView.pin(to: view)
     }
