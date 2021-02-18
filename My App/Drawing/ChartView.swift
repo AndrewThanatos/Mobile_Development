@@ -58,7 +58,7 @@ class ChartView: UIView {
     }
     
     func drawChart() {
-        var units: [DiagramUnit] = [DiagramUnit(value: 0.8, color: .blue),
+        let units: [DiagramUnit] = [DiagramUnit(value: 0.8, color: .blue),
                                     DiagramUnit(value: 0.05, color: .brown),
                                     DiagramUnit(value: 0.05, color: .cyan),
                                     DiagramUnit(value: 0.1, color: .orange)]

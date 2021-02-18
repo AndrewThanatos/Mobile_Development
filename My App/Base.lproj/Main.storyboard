@@ -103,7 +103,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wou-IC-k7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="mWQ-v5-OWV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1776.5402843601894" y="420"/>
+            <point key="canvasLocation" x="1774" y="397"/>
+        </scene>
+        <!--Books-->
+        <scene sceneID="OUE-Ji-Fo7">
+            <objects>
+                <viewController id="iJv-hm-x3b" customClass="ListViewController" customModule="My_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ofM-9M-WlZ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="p6N-8n-upW"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Books" image="book.fill" catalog="system" id="tE0-AF-8OX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YSw-pb-QQW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="1195"/>
         </scene>
         <!--Home-->
         <scene sceneID="jcm-Yi-tuR">
@@ -133,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFq-sQ-TT6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1778" y="-186"/>
+            <point key="canvasLocation" x="1774" y="-369"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dX7-WP-yed">
@@ -150,14 +166,16 @@
                     <connections>
                         <segue destination="baM-Np-3Fq" kind="relationship" relationship="viewControllers" id="3dL-Rm-EYG"/>
                         <segue destination="tvD-J2-57e" kind="relationship" relationship="viewControllers" id="D6A-zs-d2d"/>
+                        <segue destination="iJv-hm-x3b" kind="relationship" relationship="viewControllers" id="n5u-tG-2Jo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdm-95-0dj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="117"/>
+            <point key="canvasLocation" x="82" y="397"/>
         </scene>
     </scenes>
     <resources>
+        <image name="book.fill" catalog="system" width="128" height="102"/>
         <image name="chart.pie.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <namedColor name="AccentColor">
