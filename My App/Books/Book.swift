@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Book {
+struct BookStruct {
     var image: UIImage
     var title: String
     var description: String

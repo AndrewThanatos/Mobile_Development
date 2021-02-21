@@ -83,6 +83,8 @@
 		CE339A2C25DD658B009639B8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE0A9B5525D40BB700E72435 /* SceneDelegate.swift */,
+				CE0A9B5325D40BB700E72435 /* AppDelegate.swift */,
 				CE339A2D25DD65B2009639B8 /* UIViewExt.swift */,
 			);
 			path = Extensions;
@@ -100,8 +102,6 @@
 		CE339A3325DD69F1009639B8 /* Books */ = {
 			isa = PBXGroup;
 			children = (
-				CE0A9B5525D40BB700E72435 /* SceneDelegate.swift */,
-				CE0A9B5325D40BB700E72435 /* AppDelegate.swift */,
 				CE64FF8525DD327900BC824C /* ListViewController.swift */,
 				CE339A3425DD6A88009639B8 /* BookCell.swift */,
 				CE6237F925DDD1D0005E6FA1 /* Book.swift */,
