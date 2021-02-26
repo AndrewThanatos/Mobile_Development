@@ -23,10 +23,8 @@ class BookCell: UITableViewCell {
     }
     
     func set() {
-        print("set")
-        bookImageView?.image = book?.image
         bookNameLabel?.text = book?.title
-        bookDescriptionLabel?.text = book?.description
+        bookDescriptionLabel?.text = book?.subtitle
         bookPriceLabel?.text = book?.price
     }
     

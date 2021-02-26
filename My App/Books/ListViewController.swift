@@ -16,11 +16,13 @@ class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        books = fetchData()
+//        books = fetchData()
         
         setTableViewDelegates()
         
-        fetchData()
+//        fetchData()
+        fetchBooksData(from: "BooksList")
+        tableView.reloadData()
     }
     
     
@@ -46,6 +48,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 
         
         cell.book = book
+        
+        if book.image != "" {
+            cell.bookImageView.image = UIImage(named: book.image)
+        }
     
         return cell
     }
@@ -56,11 +62,18 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 extension ListViewController {
-    
-    func fetchData() -> [BookStruct] {
-        let book1 = BookStruct(image: Images.niney, title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", description: "Dummy Data", price: "10")
-        let book2 = BookStruct(image: Images.softSkill, title: "5 Soft Skills For Developer", description: "Dummy Data", price: "10")
         
-        return [book1, book2]
-    }
+    private func fetchBooksData(from file: String) {
+            
+            do {
+                if let path = Bundle.main.path(forResource: file, ofType: "txt"),
+                   let jsonData = try String(contentsOfFile: path, encoding: String.Encoding.utf8).data(using: .utf8) {
+                    
+                    let decodedData = try JSONDecoder().decode(Search.self, from: jsonData)
+                    books = decodedData.search
+                }
+            } catch {
+                print(error)
+            }
+        }
 }
