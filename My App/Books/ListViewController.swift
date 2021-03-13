@@ -51,6 +51,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         
         if book.image != "" {
             cell.bookImageView.image = UIImage(named: book.image)
+        } else {
+            cell.bookImageView.image = UIImage(named: "empty_3")
         }
     
         return cell
